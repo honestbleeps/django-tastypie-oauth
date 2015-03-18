@@ -8,7 +8,7 @@ from .models import Poll, Choice
 
 
 class ChoiceResource(ModelResource):
-    poll = fields.ToOneField("polls.api.PollResource", "poll", full=False)
+    poll = fields.ToOneField('polls.api.PollResource', 'poll', full=False)
     class Meta:
         queryset = Choice.objects.all()
         resource_name = 'choice'
@@ -19,7 +19,6 @@ class ChoiceResource(ModelResource):
                             put=("read","write")
                         )
         #authentication = OAuth20Authentication()
-
 
 
 class PollResource(ModelResource):
